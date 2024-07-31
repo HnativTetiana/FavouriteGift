@@ -1,0 +1,257 @@
+html {
+    /* Base size, 16px = 1rem */
+    font-size: 16px;
+}
+
+main {
+    min-height: 100vh;
+    padding: 1.25rem 0;
+}
+
+.filters-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 1.875rem;
+}
+
+.search-input {
+    font-size: 1rem;
+    text-align: center;
+    background-color: #ffbc03;
+    color: #000;
+    padding: 0.3125rem;
+    border-color: #ffbc03;
+    min-width: 18.75rem;
+    margin-right: 0.3125rem;
+}
+
+.search-input::placeholder {
+    color: #000;
+    letter-spacing: 0.0625rem;
+}
+
+.search-button {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.3125rem 0.625rem;
+
+    background-color: #ffbc03;
+    color: #000;
+    border-color: #ffbc03;
+    cursor: pointer;
+    letter-spacing: 0.0625rem;
+    border-radius: 0.3125rem;
+
+    margin-left: 0.3125rem;
+}
+
+.search-button:focus,
+.search-button:hover {
+    background-color: #038cff;
+    color: #fff;
+    border-color: #038cff;
+}
+
+.add-button {
+    font-size: 1.25rem;
+    background-color: #038cff;
+    border-color: #053053;
+    color: #ffbc03;
+    letter-spacing: 0.125rem;
+    font-weight: bold;
+
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 0.625rem;
+}
+
+.add-button:hover,
+.add-button:focus {
+    background-color: #053053;
+}
+
+.sort-list-decorating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 25rem;
+}
+
+.sort-list {
+    font-size: 0.875rem;
+    text-align: center;
+    background-color: #ffbc03;
+    color: #000;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 0.3125rem;
+}
+
+.ideas-list {
+    display: flex;
+    gap: 1.875rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2.5rem 0.625rem 3.125rem 0.625rem;
+}
+
+.idea-list-item a {
+    border: 0.0625rem solid #038cff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.625rem;
+
+    padding-bottom: 0.5rem;
+    max-width: 18.75rem;
+    border-radius: 0.625rem;
+    height: 25rem;
+}
+
+.idea-img {
+    width: 18.75rem;
+    height: 18.75rem;
+    border-radius: 0.625rem;
+}
+
+.idea-information {
+    margin-bottom: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.idea-name {
+    text-align: center;
+    color: #ffbc03;
+    font-size: 1.125rem;
+    text-shadow: -0.0625rem -0.0625rem 0 #053053, 0.0625rem -0.0625rem 0 #053053, -0.0625rem 0.0625rem 0 #053053, 0.0625rem 0.0625rem 0 #053053;
+    letter-spacing: 0.125rem;
+}
+
+.idea-author {
+    text-align: center;
+    color: #038cff;
+    font-size: 1.125rem;
+}
+
+.idea-price {
+    text-align: center;
+    color: #ffbc03;
+    font-size: 1.125rem;
+}
+
+/* -------------------------------------------------------------------- Modal -------------------------------------------------------------------- */
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-input {
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.modal-textarea {
+    font-size: 1.125rem;
+}
+
+#submit-button {
+    font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------- Adaptive ---------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .filters-container {
+        flex-direction: column;
+        gap: 3.125rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sort-list-decorating {
+        width: 15.625rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #add-idea-container {
+        min-width: 21.875rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .search-input {
+        font-size: 0.875rem;
+        min-width: 10rem;
+    }
+
+    .search-button {
+        font-size: 0.875rem;
+        padding: 0.3125rem 0.125rem;
+    }
+
+    .add-button {
+        font-size: 1.125rem;
+        letter-spacing: 0.0625rem;
+        padding: 0.25rem 0.625rem;
+    }
+
+    .sort-list {
+        font-size: 0.875rem;
+        padding: 0.3125rem 0.125rem;
+    }
+
+    .idea-list-item a {
+        max-width: 12.5rem;
+        height: 18.75rem;
+    }
+
+    .idea-img {
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+
+    .idea-name {
+        font-size: 1rem;
+    }
+
+    .idea-author {
+        font-size: 1rem;
+    }
+
+    .idea-price {
+        font-size: 1rem;
+    }
+
+    /* -------------------------------------------------------------- Modal Adaptive -------------------------------------------------------------- */
+
+    #add-idea-container {
+        min-width: 15.625rem;
+    }
+
+    #add-idea-title {
+        font-size: 1.375rem;
+    }
+
+    .modal-input {
+        font-size: 1.125rem;
+    }
+
+    .modal-textarea {
+        font-size: 1rem;
+    }
+
+    #submit-button {
+        font-size: 1.125rem;
+    }
+}
