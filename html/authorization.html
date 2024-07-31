@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,700&family=Raleway:wght@700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/wrapper.css" />
+
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/authorization.css" />
+
+    <link rel="stylesheet" href="../styles/modal.css" />
+
+    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon" />
+    <title>Gifts</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header"></header>
+
+        <main>
+            <main>
+                <form class="authorization">
+                    <h1 class="authorization-title">Authorization</h1>
+                    <input type="email" class="authorization-parameter" id="login-email" placeholder="Enter your email"
+                        required />
+                    <input type="password" class="authorization-parameter" id="password"
+                        placeholder="Enter your password" required />
+                    <p class="message" id="message-authorization"></p>
+                    <button class="authorization-button">Login</button>
+                    <p class="registration-question">
+                        No account?
+                        <a href="./registration.html" class="registration-link">Register!</a>
+                    </p>
+                    <p class="password-link">Forgot password?</p>
+                </form>
+            </main>
+        </main>
+    </div>
+
+    <div class="modal-container" id="authorization-modal">
+        <div class="container">
+            <button class="modal-close-button" id="authorization-close-button">
+                x
+            </button>
+            <h3 class="modal-title">
+                A number will be sent to the email address provided during registration (wait up to 1 minute)
+            </h3>
+            <form class="modal-form" id="forgot-password-form">
+                <input type="email" name="email" class="modal-field-input" id="modal-email"
+                    placeholder="Enter your email" pattern=".+@.+\..+"
+                    title="The domain of the email address must contain a dot. Required format: example@example.com"
+                    required />
+                <button class="modal-form-button" id="button-modal-send">
+                    Send
+                </button>
+
+                <input type="text" name="number-confirmation" class="modal-field-input" id="modal-number-confirmation"
+                    placeholder="Enter the number" minlength="6" maxlength="6" pattern="^\d+$" title="Digits only"
+                    disabled required />
+                <button class="modal-form-button" id="button-modal-confirmation" disabled>
+                    Confirm
+                </button>
+
+                <input type="password" name="password" class="modal-field-input" id="modal-password"
+                    placeholder="Enter a new password" pattern="^(?=.*[a-zа-яё])(?=.*[A-ZА-ЯЁ])(?=.*\d)\S*$" title="Password
+                    must contain at least one uppercase and one lowercase letter and at least one
+                    digit, with no spaces!" minlength="8" disabled required />
+                <input type="password" name="password-confirmation" class="modal-field-input"
+                    id="modal-password-confirmation" placeholder="Confirm password" minlength="8" disabled required />
+                <p class="message" id="message-modal-password"></p>
+                <button class="modal-form-button" id="button-modal-save" disabled>
+                    Save
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-container" id="message-modal"></div>
+
+    <script type="module" src="../scripts/header.js"></script>
+    <script type="module" src="../scripts/authorization.js"></script>
+    <script type="module" src="../scripts/forgotPasswordAuthorization.js"></script>
+</body>
+
+</html>
