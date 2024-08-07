@@ -71,22 +71,22 @@ const modalPhoneIdea = document.getElementById("modal-phone-idea");
 const modalDescription = document.getElementById("modal-description");
 
 processingIdeaElements({
-    modalImageUrl: modalImageUrl,
-    modalName: modalName,
-    modalIdeaPrice: modalIdeaPrice,
-    modalPhoneIdea: modalPhoneIdea,
-    modalDescription: modalDescription,
+    modalImageUrl,
+    modalName,
+    modalIdeaPrice,
+    modalPhoneIdea,
+    modalDescription,
 });
 
 const ideaForm = document.getElementById("idea-form");
 
 if (ideaForm) ideaForm.addEventListener("submit", handleIdeaForm({
-    modalImageUrl: modalImageUrl,
-    modalName: modalName,
-    modalIdeaPrice: modalIdeaPrice,
-    modalPhoneIdea: modalPhoneIdea,
-    modalDescription: modalDescription,
-    ideaForm: ideaForm,
+    modalImageUrl,
+    modalName,
+    modalIdeaPrice,
+    modalPhoneIdea,
+    modalDescription,
+    ideaForm,
     ideaID: "",
     ideaUser: user,
     formID: "add-idea-modal",

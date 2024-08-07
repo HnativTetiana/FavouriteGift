@@ -105,7 +105,9 @@ async function dataBaseConnection(method, server, myData) {
     }
 }
 
-async function addToList({ objectName, objectItemId, user, path, messageItem, messageList }) {
+async function addToList(object) {
+    const { objectName, objectItemId, user, path, messageItem, messageList } = object;
+
     const myObject = {
         name: objectName,
         itemId: objectItemId,
@@ -120,10 +122,12 @@ async function addToList({ objectName, objectItemId, user, path, messageItem, me
 
 }
 
-function buttonAddToList({ button, objectName, objectItemId, user, path, messageItem, messageList, title }) {
+function buttonAddToList(object) {
+    const { button, user, title } = object;
+
     if (button) button.addEventListener("click", () => {
         if (user > 0) {
-            addToList({ objectName, objectItemId, user, path, messageItem, messageList });
+            addToList(object);
         } else {
             ModalManagement(title, "#message-modal", "#close-modal-message", 0);
         }

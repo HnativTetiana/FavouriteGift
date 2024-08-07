@@ -64,7 +64,9 @@ function radioButtonPackaging() {
     return packaging;
 }
 
-function processingIdeaElements({ modalImageUrl, modalName, modalIdeaPrice, modalPhoneIdea, modalDescription }) {
+function processingIdeaElements(object) {
+    const { modalImageUrl, modalName, modalIdeaPrice, modalPhoneIdea, modalDescription } = object;
+
     if (modalImageUrl) modalImageUrl.addEventListener("input", gaps);
     if (modalName) modalName.addEventListener("blur", removeSpaces);
     if (modalIdeaPrice) {
@@ -75,7 +77,9 @@ function processingIdeaElements({ modalImageUrl, modalName, modalIdeaPrice, moda
     if (modalDescription) modalDescription.addEventListener("blur", removeSpaces);
 }
 
-function handleIdeaForm({ modalImageUrl, modalName, modalIdeaPrice, modalPhoneIdea, modalDescription, ideaForm, ideaID, ideaUser, formID, messageAction }) {
+function handleIdeaForm(object) {
+    const { modalImageUrl, modalName, modalIdeaPrice, modalPhoneIdea, modalDescription, ideaForm, ideaID, ideaUser, formID, messageAction } = object;
+
     return async function (e) {
         e.preventDefault();
 
@@ -98,7 +102,9 @@ function handleIdeaForm({ modalImageUrl, modalName, modalIdeaPrice, modalPhoneId
     }
 }
 
-async function orderGiftsSubmit({ gifts, modalPrice, modalAddress, modalPhone, orderForm, userID, place, formID }) {
+async function orderGiftsSubmit(object) {
+    const { gifts, modalPrice, modalAddress, modalPhone, orderForm, userID, place, formID } = object;
+    
     const orderGift = {
         gifts: JSON.stringify(gifts),
         price: parseFloat(modalPrice.textContent).toFixed(2),

@@ -114,11 +114,11 @@ if (orderForm) orderForm.addEventListener("submit", (e) => {
     const gifts = [{ id: gift.id, number: numberInput.value, price: modalPrice.textContent }];
 
     orderGiftsSubmit({
-        gifts: gifts,
-        modalPrice: modalPrice,
-        modalAddress: modalAddress,
-        modalPhone: modalPhone,
-        orderForm: orderForm,
+        gifts,
+        modalPrice,
+        modalAddress,
+        modalPhone,
+        orderForm,
         userID: user,
         place: "",
         formID: orderForm,

@@ -65,6 +65,13 @@ main {
     margin-bottom: 3.125rem;
 }
 
+.services-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    align-items: center;
+}
+
 .services-img {
     width: 18.75rem;
     height: 15.625rem;

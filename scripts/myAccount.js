@@ -88,7 +88,9 @@ function ideasHTML(list, classHTML, listHTML) {
     });
 }
 
-async function deletePart(deleteButton, element, objectName, modalTitleElement, modalTitleList) {
+async function deletePart(object) {
+    const { deleteButton, element, objectName, modalTitleElement, modalTitleList } = object;
+
     const response = await dataBaseConnection("DELETE", "../phpDataBase/deleteDataBase.php", {
         id: element.id,
         name: objectName,
@@ -101,7 +103,9 @@ async function deletePart(deleteButton, element, objectName, modalTitleElement, 
     }
 }
 
-function deleteModalFunction({ elementsClass, closestClass, array, objectName, modalTitleElement, modalTitleList }) {
+function deleteModalFunction(object) {
+    const { elementsClass, closestClass, array, objectName, modalTitleElement, modalTitleList } = object;
+
     const deleteModal = document.getElementById("delete-modal");
 
     const deleteItemButton = document.getElementById("delete-item-button");
@@ -122,9 +126,16 @@ function deleteModalFunction({ elementsClass, closestClass, array, objectName, m
                         if (deleteItemButton) deleteItemButton.removeEventListener("click", handleDelete);
 
                         function handleDelete() {
-                            deletePart(deleteModal, element, objectName, modalTitleElement, modalTitleList).then(() => {
-                                deleteItemButton.removeEventListener("click", handleDelete);
-                            });
+                            deletePart(
+                                {
+                                    deleteButton: deleteModal,
+                                    element,
+                                    objectName,
+                                    modalTitleElement,
+                                    modalTitleList
+                                }).then(() => {
+                                    deleteItemButton.removeEventListener("click", handleDelete);
+                                });
                         }
 
                         if (deleteItemButton) deleteItemButton.addEventListener("click", handleDelete);
@@ -321,11 +332,11 @@ if (orderForm) orderForm.addEventListener("submit", (e) => {
     const gifts = orderGifts();
 
     orderGiftsSubmit({
-        gifts: gifts,
+        gifts,
         modalPrice: modalAllPrice,
         modalAddress: addressModal,
         modalPhone: modalPhoneBasket,
-        orderForm: orderForm,
+        orderForm,
         userID: userData.id,
         place: "basket",
         formID: basketModal,
@@ -496,11 +507,11 @@ const modalPhoneIdea = document.getElementById("modal-phone-idea");
 const modalDescription = document.getElementById("modal-description");
 
 processingIdeaElements({
-    modalImageUrl: modalImageUrl,
-    modalName: modalName,
-    modalIdeaPrice: modalIdeaPrice,
-    modalPhoneIdea: modalPhoneIdea,
-    modalDescription: modalDescription
+    modalImageUrl,
+    modalName,
+    modalIdeaPrice,
+    modalPhoneIdea,
+    modalDescription
 });
 
 const myIdeasEdit = document.querySelectorAll(".my-idea-edit");
@@ -530,12 +541,12 @@ if (myIdeasEdit) {
                     ideaForm.removeEventListener("submit", currentHandler);
                 }
                 currentHandler = handleIdeaForm({
-                    modalImageUrl: modalImageUrl,
-                    modalName: modalName,
-                    modalIdeaPrice: modalIdeaPrice,
-                    modalPhoneIdea: modalPhoneIdea,
-                    modalDescription: modalDescription,
-                    ideaForm: ideaForm,
+                    modalImageUrl,
+                    modalName,
+                    modalIdeaPrice,
+                    modalPhoneIdea,
+                    modalDescription,
+                    ideaForm,
                     ideaID: idea.id,
                     ideaUser: userData.id,
                     formID: "edit-idea-modal",
