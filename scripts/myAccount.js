@@ -2,7 +2,9 @@ import { loadHTML } from "./pageLoader.js";
 
 window.onload = () => loadHTML('message-modal', 'messageModal.html');
 
-import { gaps, removeSpaces, findElement, saveElementInSession, dataBaseConnection } from "./functions.js";
+import { findElement, saveElementInSession } from "./functions.js";
+
+import { gaps, removeSpaces, dataBaseConnection } from "./common.js";
 
 import { ModalManagement, modalClose, processingIdeaElements, handleIdeaForm, orderGiftsSubmit } from "./modal.js";
 

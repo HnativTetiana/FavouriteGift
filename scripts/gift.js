@@ -1,4 +1,6 @@
-import { gaps, removeSpaces, dataBaseConnection, buttonAddToList } from "./functions.js";
+import { gaps, removeSpaces, dataBaseConnection } from "./common.js";
+
+import { buttonAddToList } from "./functions.js";
 
 import { ModalManagement, orderGiftsSubmit } from "./modal.js";
 

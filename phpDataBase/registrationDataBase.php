@@ -31,7 +31,7 @@ $result_check_email = $stmt->get_result();
 if ($result_check_email->num_rows > 0) {
     echo json_encode("Email is already registered");
 } else {
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = hash('sha256', $password);
 
     $sql = "INSERT INTO users (surname, username, phone, email, password) 
         VALUES (?, ?, ?, ?, ?)";

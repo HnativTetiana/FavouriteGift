@@ -1,4 +1,4 @@
-import { gaps, removeSpaces, waitForElement, dataBaseConnection } from "./functions.js";
+import { gaps, removeSpaces, waitForElement, dataBaseConnection } from "./common.js";
 
 function showMessage(modal, title, modalClass) {
     let modalTitle = document.getElementById("modal-title-message");

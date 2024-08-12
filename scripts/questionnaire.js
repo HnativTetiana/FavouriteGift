@@ -2,7 +2,7 @@ import { loadHTML } from "./pageLoader.js";
 
 window.onload = () => loadHTML('header', 'header.html');
 
-import { dataBaseConnection } from "./functions.js";
+import { dataBaseConnection } from "./common.js";
 
 const user = parseInt(localStorage.getItem("user")) || 0;
 

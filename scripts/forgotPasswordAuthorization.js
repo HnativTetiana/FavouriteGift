@@ -1,4 +1,4 @@
-import { gaps, dataBaseConnection } from "./functions.js";
+import { gaps, dataBaseConnection } from "./common.js";
 
 import { ModalManagement } from "./modal.js";
 

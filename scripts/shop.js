@@ -1,4 +1,6 @@
-import { removeSpaces, showCondition, saveElementInSession, searchByName, sortItems, dataBaseConnection } from "./functions.js";
+import { showCondition, saveElementInSession, searchByName, sortItems } from "./functions.js";
+
+import { removeSpaces, dataBaseConnection } from "./common.js";
 
 import { ModalManagement } from "./modal.js";
 
