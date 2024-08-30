@@ -95,8 +95,8 @@
                         <input type="text" class="my-data-parameter" id="name" placeholder="Enter your first name"
                             required />
                         <input type="tel" class="my-data-parameter" id="phone" placeholder="Enter your phone number"
-                            minlength="13" maxlength="13" pattern="\+[0-9]{12}"
-                            title="International format (+12 digits): +XXXXXXXXXXXX" required />
+                            minlength="8" maxlength="16" pattern="^\+\d+$"
+                            title="Please, enter + and from 7 to 15 digits" required />
                         <input type="email" class="my-data-parameter" id="login" placeholder="Enter your email"
                             pattern=".+@.+\..+"
                             title="Domain of email address must contain a dot. Required format: example@example.com"
@@ -161,8 +161,7 @@
                     title="The price can be an integer or a decimal number with no more than two digits after the DOT"
                     value="0" required />
                 <input type="tel" id="modal-phone-idea" class="modal-input" name="phone" placeholder="Phone number"
-                    minlength="13" maxlength="13" pattern="\+[0-9]{12}"
-                    title="International format (+12 digits): +XXXXXXXXXXXX" />
+                    minlength="8" maxlength="16" pattern="^\+\d+$" title="Please, enter + and from 7 to 15 digits" />
                 <textarea id="modal-description" class="modal-textarea" name="" id="" cols="30" rows="10"
                     placeholder="Description" required></textarea>
 
@@ -187,8 +186,8 @@
                 <input type="text" id="address-modal" class="modal-field-input order-input"
                     placeholder="Enter delivery address" name="address" minlength="10" maxlength="255" required />
                 <input type="tel" id="modal-phone-basket" class="modal-field-input order-input" name="phone"
-                    placeholder="Enter phone number" minlength="13" maxlength="13" pattern="\+[0-9]{12}"
-                    title="International format (+12 digits): +XXXXXXXXXXXX" required />
+                    placeholder="Enter phone number" minlength="8" maxlength="16" pattern="^\+\d+$"
+                    title="Please, enter + and from 7 to 15 digits" required />
 
                 <ul class="packaging-list">
                     <li class="packaging-item">

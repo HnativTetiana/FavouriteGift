@@ -38,8 +38,8 @@
                 <input type="text" class="registration-parameter" id="name" placeholder="Enter your first name"
                     required />
                 <input type="tel" class="registration-parameter" id="phone" placeholder="Enter your phone number"
-                    minlength="13" maxlength="13" pattern="\+[0-9]{12}"
-                    title="International format (+12 digits): +XXXXXXXXXXXX" required />
+                    minlength="8" maxlength="16" pattern="^\+\d+$" title="Please, enter + and from 7 to 15 digits"
+                    required />
                 <input type="email" class="registration-parameter" id="login" placeholder="Enter your email address"
                     pattern=".+@.+\..+"
                     title="The email domain must contain a dot. Required format: example@example.com" required />
